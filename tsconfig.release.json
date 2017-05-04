@@ -3,8 +3,8 @@
   "compilerOptions": {
     "sourceMap": false,
     "declaration": false,
-    "rootDir": ".",
-    "outDir": "build",
+    "rootDir": "src",
+    "outDir": "dist",
     "removeComments": true,
     "jsx": "react"
   },
