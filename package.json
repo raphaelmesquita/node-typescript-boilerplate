@@ -9,18 +9,21 @@
   "devDependencies": {
     "@types/jest": "~19.2.2",
     "@types/node": "~6.0.70",
+    "concurrently": "^3.4.0",
     "jest": "~19.0.2",
+    "nodemon": "^1.11.0",
     "rimraf": "~2.6.1",
     "tslint": "~4.5.1",
     "tslint-microsoft-contrib": "~4.0.1",
     "typescript": "~2.3.1"
   },
   "scripts": {
+    "dev": "nodemon -w src -e ts --exec \"npm start -s\"",
     "clean": "rimraf coverage dist tmp",
     "build": "tsc -p tsconfig.release.json",
     "watch": "tsc -w -p tsconfig.release.json",
     "lint": "tslint -t stylish '{src,__tests__}/**/*.{ts,tsx}'",
-    "prestart": "npm run -s build",
+    "prestart": "npm run build",
     "pretest": "npm run lint",
     "start": "node dist",
     "test": "npm run test-only",
